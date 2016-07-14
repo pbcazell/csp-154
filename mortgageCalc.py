@@ -3,6 +3,7 @@
 # 
 # PLTW training
 # version 7/14/2016
+# Phil Cazella & Craig Hoiska
 ####
 
 import Tkinter
