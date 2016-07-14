@@ -27,16 +27,26 @@ def UpdateView():
 # Create root window 
 ####
 root = Tkinter.Tk()
-
-# Make and place a canvas widget for events and drawing
-canvas = Canvas(root, height=600, width=400, relief=RAISED, bg='white')
-canvas.grid() #Puts the canvas in the main Tk window
-
-# Instantiate and place slider
-radius_slider = Tkinter.Scale(root, from_=1, to=150, label='Years')
-radius_slider.grid(row=6, column=0, sticky=Tkinter.W)
+payment_text = Tkinter.Label(root, text='Monthly Payment:')
+payment_text.grid(row=0, column=1)
+mpayment_text = Tkinter.Label(root, text='$')
+mpayment_text.grid(row=1, column=1)
+money_text = Tkinter.Label(root, text='Amount to be borrowed:')
+money_text.grid(row=1, column=0)
+money = Entry(root)
+money.grid(row=2,column=0)
+# Instantiate and place Rate slider
+rate_slider = Tkinter.Scale(root, from_=0, to=10, orient=HORIZONTAL, resolution=.5,length=300, label='Interest Rate')
+rate_slider.grid(row=5, column=0, columnspan=2, sticky=Tkinter.W)
 # Create and place directions for the user
-text = Tkinter.Label(root, text='Drag slider \nto adjust\nterm(years).')
-text.grid(row=5, column=0)
+rate_text = Tkinter.Label(root, text='Drag slider to adjust Interest Rate.')
+rate_text.grid(row=4, columnspan=2, column=0)
+
+# Instantiate and place Term(Years) slider
+years_slider = Tkinter.Scale(root, from_=1, to=50, orient=HORIZONTAL, length=300, label='Years')
+years_slider.grid(row=7, columnspan=2, column=0, sticky=Tkinter.W)
+# Create and place directions for the user
+years_text = Tkinter.Label(root, text='Drag slider to adjust term(years).')
+years_text.grid(row=6, columnspan=2, column=0)
 
 root.mainloop()
