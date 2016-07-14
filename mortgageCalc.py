@@ -35,15 +35,16 @@ money_text = Tkinter.Label(root, text='Amount to be borrowed:')
 money_text.grid(row=1, column=0)
 money = Entry(root)
 money.grid(row=2,column=0)
+loan = money.get()
 # Instantiate and place Rate slider
-rate_slider = Tkinter.Scale(root, from_=0, to=10, orient=HORIZONTAL, resolution=.5,length=300, label='Interest Rate')
+rate_slider = Tkinter.Scale(root, from_=0, to=10, orient=HORIZONTAL, resolution=.5,length=300, label='Interest Rate', variable=rate, command=UpdateView)
 rate_slider.grid(row=5, column=0, columnspan=2, sticky=Tkinter.W)
 # Create and place directions for the user
 rate_text = Tkinter.Label(root, text='Drag slider to adjust Interest Rate.')
 rate_text.grid(row=4, columnspan=2, column=0)
 
 # Instantiate and place Term(Years) slider
-years_slider = Tkinter.Scale(root, from_=1, to=50, orient=HORIZONTAL, length=300, label='Years')
+years_slider = Tkinter.Scale(root, from_=1, to=50, orient=HORIZONTAL, length=300, label='Years', variable=years, command=UpdateView)
 years_slider.grid(row=7, columnspan=2, column=0, sticky=Tkinter.W)
 # Create and place directions for the user
 years_text = Tkinter.Label(root, text='Drag slider to adjust term(years).')
