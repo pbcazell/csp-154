@@ -5,9 +5,23 @@
 # version 7/14/2016
 # Phil Cazella & Craig Hoiska
 ####
-
+import Mortgage
 import Tkinter
 from Tkinter import *
+
+
+#####
+#Controller
+#####
+DTO = Mortgage()
+
+def UpdateView():
+    #variable names are : rate, years, loan
+    DTO.Principle = loan
+    DTO.Rate = rate
+    DTO.Term = years
+    
+    money_text.set(m.GetPayment())
 
 #####
 # Create root window 
