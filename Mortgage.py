@@ -1,8 +1,8 @@
 class Mortgage:
     def __init__(self):
-        self.Principle=100000
+        self.Principle=100000.0
         self.Rate=4.5
-        self.Term=30
+        self.Term=30.0
 
     def GetPayment(self):
         L = self.Principle
